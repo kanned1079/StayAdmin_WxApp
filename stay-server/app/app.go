@@ -1,8 +1,8 @@
 package app
 
 import (
-	"stay-server/dao"
-	"stay-server/routers"
+	"stay-server/internal/dao"
+	"stay-server/internal/routers"
 )
 
 type AppInstance struct {
