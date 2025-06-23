@@ -1,19 +1,20 @@
 package app
 
 import (
-	"github.com/gin-gonic/gin"
-	"gorm.io/gorm"
+	"stay-server/dao"
+	"stay-server/routers"
 )
 
-type App struct {
-	Id      int32
-	Dao     *gorm.DB
-	Gateway *gin.Engine
+type AppInstance struct {
+	InstanceId  int32
+	DaoInst     *dao.DaoInstance
+	GatewayInst *routers.GatewayApp
 }
 
-func NewApp() *App {
-
-	return &App{
-		Id: 1,
+func NewApp(id int32, gatewayRunMode string) *AppInstance {
+	return &AppInstance{
+		InstanceId:  1,
+		GatewayInst: routers.NewGatewayApp(id, gatewayRunMode),
+		DaoInst:     dao.NewDaoInstance(id),
 	}
 }

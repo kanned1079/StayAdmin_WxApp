@@ -1,0 +1,7 @@
+mysql_config:
+  protocol: "tcp"
+  host: "api.ikanned.com"
+  port: 24407
+  username: "test_stay"
+  password: "TcRSI4UYQN6wP6XWE7"
+  database: "test_stay_db"

@@ -2,8 +2,9 @@ package main
 
 import (
 	"fmt"
+	"github.com/gin-gonic/gin"
 	"log"
-	app2 "stay-server/app"
+	appPkg "stay-server/app"
 )
 
 func init() {
@@ -11,7 +12,8 @@ func init() {
 }
 
 func main() {
-	var app = app2.App{}
-	fmt.Print(app.Id)
+	var app = appPkg.NewApp(1, gin.ReleaseMode)
+	fmt.Print(app.InstanceId)
 
+	app.GatewayInst.StartApiGateway()
 }
