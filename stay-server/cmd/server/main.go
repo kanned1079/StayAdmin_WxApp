@@ -8,10 +8,12 @@ import (
 	"stay-server/internal/config"
 	"stay-server/internal/dao"
 	"stay-server/internal/models"
+	"stay-server/utils"
 )
 
 func init() {
 	config.AppCfg.ReadConfigFile("config/config.yaml")
+
 }
 
 func main() {
@@ -22,7 +24,11 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	log.Print("count: ", count)
+
+	var logger utils.Logger
+
+	logger.PrintInfo("count", count)
+	logger.PrintWarn("jwt secret: ", config.AppCfg.Runtime.JwtSecret)
 
 	app.GatewayInst.StartApiGateway()
 }

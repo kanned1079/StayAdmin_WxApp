@@ -1,5 +1,5 @@
 package utils
 
-func CheckAdminAccountIsExisted() {
+func (Utils) CheckAdminAccountIsExisted() {
 
 }

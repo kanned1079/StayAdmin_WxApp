@@ -3,6 +3,7 @@ package config
 type AppConfig struct {
 	MysqlConfig MysqlConfig `yaml:"mysql_config" json:"mysql_config"`
 	WxApp       WxApp       `yaml:"wx_app"`
+	Runtime     Runtime     `yaml:"runtime"`
 }
 
 type MysqlConfig struct {
@@ -17,4 +18,9 @@ type MysqlConfig struct {
 type WxApp struct {
 	AppId     string `yaml:"app_id"`
 	AppSecret string `yaml:"app_secret"`
+}
+
+type Runtime struct {
+	JwtSecret            string `yaml:"jwt_secret"`
+	AccessTokenExpiredIn int    `yaml:"access_token_expired_in"`
 }
